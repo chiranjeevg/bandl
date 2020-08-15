@@ -27,12 +27,32 @@ bn_df = nd.get_option_chain_df(symbol, expiry_date,dayfirst=False) #returns opti
 ```
 #### To get stock historical data.
 ```python
+#get NIFTY 50 data for last one year
+dfs = nd.get_data(symbol="NIFTY 50")
 data_frame = nd.get_data(symbol,series="EQ",start=None,end=None,periods=None,dayfirst=False) #returns historical data in pandas data frames
 ```
 
 #### To get FII/DII data.
 ```python
 part_oi_df = nd.get_part_oi_df(start=None,end=None,periods=None,dayfirst=False,workers=None)
+```
+
+### To import Nasdaq  Module
+```python
+from bandl.nasdaq import Nasdaq
+ndq = Nasdaq()
+```
+#### get Nasdaq stock historical data.
+```python
+#get APPLE data for last one year
+dfs = ndq.get_data(symbol="AAPL")
+```
+### Samco module
+```python
+from bandl.samco import Samco
+sc = Samco(user_id,password,dob)
+#get NIFTY data for last one year from samco
+dfs = sc.get_data(symbol="NIFTY 50")
 ```
 
 ## Contributing
